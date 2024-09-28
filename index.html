@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <style>
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .left, .right {
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .songbuttons img {
+                width: 30px;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+
+            .playbar, .seekbar {
+                display: block;
+                width: 100%;
+            }
+
+            .playbar .abovebar {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .hamburgerContainer {
+                display: block;
+            }
+
+            .signupbtn, .loginbtn {
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+            }
+        }
+
+        /* General Styles for buttons */
+        .signupbtn, .loginbtn {
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .signupbtn {
+            background-color: #1db954;
+            color: #fff;
+        }
+
+        .loginbtn {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container flex bg-black">
+        <!-- Left Sidebar -->
+        <div class="left">
+            <div class="close">
+                <img width="30" class="invert" src="img/close.svg" alt="Close">
+            </div>
+            <div class="home bg-grey rounded m-1 p-1">
+                <div class="logo">
+                    <img width="110" class="invert" src="img/logo.svg" alt="Spotify Logo">
+                </div>
+                <ul>
+                    <li><img class="invert" src="img/home.svg" alt="Home">Home</li>
+                    <li><img class="invert" src="img/search.svg" alt="Search">Search</li>
+                </ul>
+            </div>
+
+            <div class="library bg-grey rounded m-1 p-1">
+                <div class="heading">
+                    <img class="invert" src="img/playlist.svg" alt="Your Library">
+                    <h2>Your Library</h2>
+                </div>
+                <div class="songList">
+                    <ul></ul>
+                </div>
+                <div class="footer">
+                    <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="right bg-grey rounded">
+            <div class="header">
+                <div class="nav">
+                    <div class="hamburgerContainer">
+                        <img width="40" class="invert hamburger" src="img/hamburger.svg" alt="Hamburger Menu">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="signupbtn" onclick="signUp()">Sign up</button>
+                    <button class="loginbtn" onclick="logIn()">Log in</button>
+                </div>
+            </div>
+
+            <!-- Spotify Playlists Section -->
+            <div class="spotifyPlaylists">
+                <h1>Spotify Playlists</h1>
+                <div class="cardContainer">
+                    <!-- First Card -->
+                    <div class="card">
+                        <div class="play">
+                            <div style="width:28px; height:28px; background-color:#00FF00; border-radius:50%; border:2px solid #000; padding:4px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 20V4L19 12L5 20Z" stroke="#141B34" stroke-width="1.5" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <img src="songs_icons\ncs\cover (9).jpg" alt="Happy Hits">
+                        <h2>Sleep Songs!</h2>
+                        <p>Songs for you!</p>
+                    </div>
+
+                    <!-- Second Card -->
+                    <div class="card">
+                        <img src="songs_icons\Love_(mood)\cover (5).jpg" alt="Happy Hits">
+                        <h2>I Love You!</h2>
+                        <p>Love is in the air!</p>
+                    </div>
+
+                    <!-- Third Card -->
+                    <div class="card">
+                        <img src="songs_icons\karan aujla\cover (8).jpg" alt="Happy Hits">
+                        <h2>Karan Aujla!</h2>
+                        <p>Karan Aujla for you!</p>
+                    </div>
+
+
+                    <!-- Fourth Card -->
+                    <div class="card">
+                        <img src="songs_icons\Funky_(mood)\cover (4).jpg" alt="Happy Hits">
+                        <h2>Go Funky!</h2>
+                        <p>Lets go Funky!</p>
+                    </div>
+
+
+
+
+                    <!-- Fifth Card -->
+                    <div class="card">
+                        <img src="songs_icons\Diljit\cover (3).jpg" alt="Happy Hits">
+                        <h2>Diljit Dosanjh!</h2>
+                        <p>Diljit Dosanjh hits!</p>
+                    </div>
+
+
+
+                    <!-- Sixth Card -->
+                    <div class="card">
+                        <img src="songs_icons\Chill_(mood)\cover (2).jpg" alt="Happy Hits">
+                        <h2>Happy Hits!</h2>
+                        <p>Yes, Just Chill!</p>
+                    </div>
+
+
+                    <!-- Seventh Card -->
+                    <div class="card">
+                        <img src="songs_icons\Bright_(mood)\cover (1).jpg" alt="Happy Hits">
+                        <h2>Just Chill</h2>
+                        <p>Bright Songs for you!</p>
+                    </div>
+
+
+                    <!-- Eighth Card -->
+                    <div class="card">
+                        <img src="songs_icons\Angry_(mood)\cover.jpg" alt="Happy Hits">
+                        <h2>Angry Mood!</h2>
+                        <p>Calm your Anger!</p>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <!-- Playbar Section -->
+            <div class="playbar">
+                <div class="seekbar">
+                    <div class="circle"></div>
+                </div>
+                <div class="abovebar">
+                    <div class="songinfo">
+                        <!-- Current song info will go here -->
+                    </div>
+                    <div class="songbuttons">
+                        <img width="35" id="previous" src="img/prevsong.svg" alt="Previous Song">
+                        <img width="35" id="play" src="img/play.svg" alt="Play Song">
+                        <img width="35" id="next" src="img/nextsong.svg" alt="Next Song">
+                    </div>
+                    <div class="timevol">
+                        <div class="songtime">
+                            <!-- Song time info will go here -->
+                        </div>
+                        <div class="volume">
+                            <img width="25" src="img/volume.svg" alt="Volume">
+                            <div class="range">
+                                <input type="range" name="volume" id="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
