@@ -1,4 +1,4 @@
-Spotify Clone
+# Spotify Clone
 This project is a front-end clone of Spotify, built with HTML, CSS, and JavaScript. It features a responsive user interface, mimicking Spotify's design and functionality. Key features include:
 •	Responsive Design: Ensures the layout adjusts to different screen sizes, offering a seamless experience on both desktop and mobile devices.
 •	Custom Playlists Section: Displays several curated playlists, each represented by a card with an album cover, playlist name, and description.
